@@ -1137,6 +1137,14 @@ class X86_64Assembler(w: DataWriter, OP_REX: byte) {
 		emit_rex_bb_r_m(a, b, NO_REX, 0x0F, 0x57);
 	}
 
+	def pcmpeqw_s_s(a: X86_64Xmmr, b: X86_64Xmmr) -> this {
+		emitb(0x66);
+		emit_rex_bb_r_r(a, b, NO_REX, 0x0F, 0x75);
+	}
+	def pcmpeqw_s_m(a: X86_64Xmmr, b: X86_64Addr) -> this {
+		emitb(0x66);
+		emit_rex_bb_r_m(a, b, NO_REX, 0x0F, 0x75);
+	}
 	def pcmpeqd_s_s(a: X86_64Xmmr, b: X86_64Xmmr) -> this {
 		emitb(0x66);
 		emit_rex_bb_r_r(a, b, NO_REX, 0x0F, 0x76);
