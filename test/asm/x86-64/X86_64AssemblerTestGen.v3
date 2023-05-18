@@ -552,6 +552,9 @@ def do_sse() {
 	do_s_s("pmulhuw", asm.pmulhuw_s_s);
 	do_s_s("pmulhrsw", asm.pmulhrsw_s_s);
 
+	do_s_s("sqrtps", asm.sqrtps_s_s);
+	do_s_s("sqrtpd", asm.sqrtpd_s_s);
+
 	do_s_s("orps", asm.orps_s_s);
 
 	do_s_s("xorps", asm.xorps_s_s);

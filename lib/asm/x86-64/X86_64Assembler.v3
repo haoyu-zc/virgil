@@ -1188,6 +1188,13 @@ class X86_64Assembler(w: DataWriter, OP_REX: byte) {
 		emitb(0xF2);
 		emit_rex_bb_r_m(a, b, NO_REX, 0x0F, 0x51);
 	}
+	def sqrtps_s_s(a: X86_64Xmmr, b: X86_64Xmmr) -> this {
+		emit_rex_bb_r_r(a, b, NO_REX, 0x0F, 0x51);
+	}
+	def sqrtpd_s_s(a: X86_64Xmmr, b: X86_64Xmmr) -> this {
+		emitb(0x66);
+		emit_rex_bb_r_r(a, b, NO_REX, 0x0F, 0x51);
+	}
 	def maxss_s_s(a: X86_64Xmmr, b: X86_64Xmmr) -> this {
 		emitb(0xF3);
 		emit_rex_bb_r_r(a, b, NO_REX, 0x0F, 0x5F);
