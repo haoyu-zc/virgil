@@ -571,6 +571,7 @@ def do_sse() {
 	do_s_m("xorps", asm.xorps_s_m);
 	do_s_s("xorpd", asm.xorpd_s_s);
 	do_s_m("xorpd", asm.xorpd_s_m);
+	do_s_s("pxor", asm.pxor_s_s);
 
 	do_s_s("pcmpeqb", asm.pcmpeqb_s_s);
 	do_s_m("pcmpeqb", asm.pcmpeqb_s_m);
@@ -636,7 +637,13 @@ def do_sse() {
 	do_r_m("cvttss2si", asm.cvttss2si_r_m);
 	do_r_s("cvttsd2si", asm.cvttsd2si_r_s);
 	do_r_m("cvttsd2si", asm.cvttsd2si_r_m);
+	do_s_s("cvtdq2ps", asm.cvtdq2ps_s_s);
+	do_s_m("cvtdq2ps", asm.cvtdq2ps_s_m);
+	do_s_s("cvtdq2pd", asm.cvtdq2pd_s_s);
+	do_s_s("cvtps2pd", asm.cvtps2pd_s_s);
+	do_s_s("cvtpd2ps", asm.cvtpd2ps_s_s);
 
+	do_s_s("unpcklps", asm.unpcklps_s_s);
 	do_s_s("punpckhwd", asm.punpckhwd_s_s);
 	do_s_s("punpcklwd", asm.punpcklwd_s_s);
 	do_s_s("punpckhbw", asm.punpckhbw_s_s);
@@ -646,7 +653,9 @@ def do_sse() {
 	do_s_s("pshufb", asm.pshufb_s_s);
 	do_s_s("packuswb", asm.packuswb_s_s);
 	do_s_s("packsswb", asm.packsswb_s_s);
-
+	do_s_s("packssdw", asm.packssdw_s_s);
+	do_s_s("packusdw", asm.packusdw_s_s);
+	// do_s_s_i("pblendw", asm.pblendw_s_s);
 }
 
 def ADDRS = [
